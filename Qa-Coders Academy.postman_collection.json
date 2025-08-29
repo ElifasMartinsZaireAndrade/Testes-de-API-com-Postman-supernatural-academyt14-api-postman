@@ -1378,17 +1378,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -1653,17 +1645,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-6-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-6-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -1812,17 +1796,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -2067,17 +2043,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -2228,17 +2196,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -2386,17 +2346,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -2544,17 +2496,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -2702,17 +2646,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -2866,17 +2802,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -3026,17 +2954,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -3184,17 +3104,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -3241,17 +3153,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -3293,17 +3197,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -3343,17 +3239,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -3395,17 +3283,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -3452,17 +3332,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -3504,17 +3376,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -3687,17 +3551,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -3870,17 +3726,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -4058,17 +3906,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -4231,6 +4071,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4382,6 +4228,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4538,6 +4390,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4689,6 +4547,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4711,6 +4575,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4728,6 +4598,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4750,6 +4626,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4767,6 +4649,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4784,6 +4672,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4806,6 +4700,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4828,6 +4728,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4845,6 +4751,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4867,6 +4779,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4884,6 +4802,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4901,6 +4825,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4923,6 +4853,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4940,6 +4876,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4957,6 +4899,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4979,6 +4927,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -4996,6 +4950,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -5013,6 +4973,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -5035,6 +5001,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -5052,6 +5024,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -5069,6 +5047,12 @@
 											"language": "json"
 										}
 									}
+								},
+								"url": {
+									"raw": "{{url}}company",
+									"host": [
+										"{{url}}company"
+									]
 								}
 							},
 							"response": []
@@ -5263,17 +5247,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -5445,17 +5421,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/{{companyId}}",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"{{companyId}}"
 									]
 								}
@@ -5506,29 +5476,15 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-6-supernatural.qacoders.dev.br/api/company/status/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/status/{{companyId}}",
 									"host": [
-										"api-6-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"status",
 										"{{companyId}}"
 									]
 								}
-							},
-							"response": []
-						},
-						{
-							"name": "New Request",
-							"request": {
-								"method": "GET",
-								"header": []
 							},
 							"response": []
 						}
@@ -5706,17 +5662,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/{{companyId}}",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"{{companyId}}"
 									]
 								}
@@ -5866,17 +5816,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/{{companyId}}",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"{{companyId}}"
 									]
 								}
@@ -6122,17 +6066,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/{{companyId}}",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"{{companyId}}"
 									]
 								}
@@ -6284,17 +6222,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/{{companyId}}",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"{{companyId}}"
 									]
 								}
@@ -6443,17 +6375,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/{{companyId}}",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"{{companyId}}"
 									]
 								}
@@ -6602,17 +6528,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/{{companyId}}",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"{{companyId}}"
 									]
 								}
@@ -6761,17 +6681,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/{{companyId}}",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"{{companyId}}"
 									]
 								}
@@ -6926,17 +6840,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/{{companyId}}",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"{{companyId}}"
 									]
 								}
@@ -7266,17 +7174,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-3-supernatural.qacoders.dev.br/api/company/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/{{companyId}}",
 									"host": [
-										"api-3-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"{{companyId}}"
 									]
 								}
@@ -7456,17 +7358,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/{{companyId}}",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"{{companyId}}"
 									]
 								}
@@ -7641,17 +7537,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/{{companyId}}",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"{{companyId}}"
 									]
 								}
@@ -7824,17 +7714,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/{{companyId}}",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"{{companyId}}"
 									]
 								}
@@ -8009,17 +7893,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/{{companyId}}",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"{{companyId}}"
 									]
 								}
@@ -8306,17 +8184,9 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company",
-									"protocol": "https",
+									"raw": "{{url}}company",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
-									],
-									"path": [
-										"api",
-										"company"
+										"{{url}}company"
 									]
 								}
 							},
@@ -8488,17 +8358,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/{{companyId}}",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"{{companyId}}"
 									]
 								}
@@ -8551,17 +8415,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api-supernatural.qacoders.dev.br/api/company/address/{{companyId}}",
-									"protocol": "https",
+									"raw": "{{url}}company/address/{{companyId}}",
 									"host": [
-										"api-supernatural",
-										"qacoders",
-										"dev",
-										"br"
+										"{{url}}company"
 									],
 									"path": [
-										"api",
-										"company",
 										"address",
 										"{{companyId}}"
 									]
@@ -8619,17 +8477,11 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-supernatural.qacoders.dev.br/api/company/address/{{companyId}}",
-							"protocol": "https",
+							"raw": "{{url}}company/address/{{companyId}}",
 							"host": [
-								"api-supernatural",
-								"qacoders",
-								"dev",
-								"br"
+								"{{url}}company"
 							],
 							"path": [
-								"api",
-								"company",
 								"address",
 								"{{companyId}}"
 							]
@@ -8683,17 +8535,11 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-supernatural.qacoders.dev.br/api/company/address/{{companyId}}",
-							"protocol": "https",
+							"raw": "{{url}}company/address/{{companyId}}",
 							"host": [
-								"api-supernatural",
-								"qacoders",
-								"dev",
-								"br"
+								"{{url}}company"
 							],
 							"path": [
-								"api",
-								"company",
 								"address",
 								"{{companyId}}"
 							]
@@ -8747,17 +8593,11 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-supernatural.qacoders.dev.br/api/company/address/{{companyId}}",
-							"protocol": "https",
+							"raw": "{{url}}company/address/{{companyId}}",
 							"host": [
-								"api-supernatural",
-								"qacoders",
-								"dev",
-								"br"
+								"{{url}}company"
 							],
 							"path": [
-								"api",
-								"company",
 								"address",
 								"{{companyId}}"
 							]
@@ -8811,17 +8651,11 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-supernatural.qacoders.dev.br/api/company/address/{{companyId}}",
-							"protocol": "https",
+							"raw": "{{url}}company/address/{{companyId}}",
 							"host": [
-								"api-supernatural",
-								"qacoders",
-								"dev",
-								"br"
+								"{{url}}company"
 							],
 							"path": [
-								"api",
-								"company",
 								"address",
 								"{{companyId}}"
 							]
@@ -8875,17 +8709,11 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-supernatural.qacoders.dev.br/api/company/address/{{companyId}}",
-							"protocol": "https",
+							"raw": "{{url}}company/address/{{companyId}}",
 							"host": [
-								"api-supernatural",
-								"qacoders",
-								"dev",
-								"br"
+								"{{url}}company"
 							],
 							"path": [
-								"api",
-								"company",
 								"address",
 								"{{companyId}}"
 							]
@@ -8939,17 +8767,11 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-supernatural.qacoders.dev.br/api/company/address/{{companyId}}",
-							"protocol": "https",
+							"raw": "{{url}}company/address/{{companyId}}",
 							"host": [
-								"api-supernatural",
-								"qacoders",
-								"dev",
-								"br"
+								"{{url}}company"
 							],
 							"path": [
-								"api",
-								"company",
 								"address",
 								"{{companyId}}"
 							]
@@ -9003,17 +8825,11 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-supernatural.qacoders.dev.br/api/company/address/{{companyId}}",
-							"protocol": "https",
+							"raw": "{{url}}company/address/{{companyId}}",
 							"host": [
-								"api-supernatural",
-								"qacoders",
-								"dev",
-								"br"
+								"{{url}}company"
 							],
 							"path": [
-								"api",
-								"company",
 								"address",
 								"{{companyId}}"
 							]
@@ -9067,17 +8883,11 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-supernatural.qacoders.dev.br/api/company/address/{{companyId}}",
-							"protocol": "https",
+							"raw": "{{url}}company/address/{{companyId}}",
 							"host": [
-								"api-supernatural",
-								"qacoders",
-								"dev",
-								"br"
+								"{{url}}company"
 							],
 							"path": [
-								"api",
-								"company",
 								"address",
 								"{{companyId}}"
 							]
@@ -9131,17 +8941,11 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-supernatural.qacoders.dev.br/api/company/address/{{companyId}}",
-							"protocol": "https",
+							"raw": "{{url}}company/address/{{companyId}}",
 							"host": [
-								"api-supernatural",
-								"qacoders",
-								"dev",
-								"br"
+								"{{url}}company"
 							],
 							"path": [
-								"api",
-								"company",
 								"address",
 								"{{companyId}}"
 							]
@@ -9195,17 +8999,11 @@
 							}
 						},
 						"url": {
-							"raw": "https://api-supernatural.qacoders.dev.br/api/company/address/{{companyId}}",
-							"protocol": "https",
+							"raw": "{{url}}company/address/{{companyId}}",
 							"host": [
-								"api-supernatural",
-								"qacoders",
-								"dev",
-								"br"
+								"{{url}}company"
 							],
 							"path": [
-								"api",
-								"company",
 								"address",
 								"{{companyId}}"
 							]
@@ -9479,73 +9277,6 @@
 					"path": [
 						"api",
 						"costCenter"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GitHub",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", () =>  {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				},
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{AUTH_TOKEN}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://api.github.com/user",
-					"protocol": "https",
-					"host": [
-						"api",
-						"github",
-						"com"
-					],
-					"path": [
-						"user"
 					]
 				}
 			},
