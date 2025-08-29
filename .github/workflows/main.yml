@@ -1,0 +1,48 @@
+name: CI de Testes de API com Postman
+
+# Define quando a automação deve rodar
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# Define as tarefas que serão executadas
+jobs:
+  run-api-tests:
+    # Usa uma máquina virtual do Ubuntu para rodar os testes
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Baixa o seu código do repositório para a máquina virtual
+      - name: Baixar o código do repositório
+        uses: actions/checkout@v4
+
+      # 2. Configura o ambiente Node.js, necessário para rodar o Newman
+      - name: Configurar o ambiente Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Instala o Newman e o gerador de relatórios HTML
+      - name: Instalar o Newman e o gerador de relatórios
+        run: npm install -g newman newman-reporter-htmlextra
+
+      # 4. Executa os testes da coleção do Postman
+      - name: Executar os testes da API com Newman
+        run: |
+          # O comando usa os nomes dos seus arquivos e injeta o segredo
+          newman run "Qa-Coders Academy.postman_collection.json" \
+            -e "Supernatural.postman_environment.json" \
+            --env-var "AUTH_TOKEN=${{ secrets.GH_PERSONAL_TOKEN }}" \
+            --reporters cli,htmlextra \
+            --reporter-htmlextra-export "newman-results/report.html"
+
+      # 5. Salva os relatórios dos testes como um artefato para download
+      - name: Salvar os relatórios dos testes como artefato
+        # A condição 'if: always()' garante que os relatórios sejam salvos mesmo se algum teste falhar
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorios-dos-testes-api
+          path: newman-results
