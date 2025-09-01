@@ -1,4 +1,4 @@
-name: CI de Testes de API com Postman
+name: CI de Testes de API com Postman e Deploy
 
 # Define quando a automação deve rodar
 on:
@@ -9,40 +9,70 @@ on:
 
 # Define as tarefas que serão executadas
 jobs:
+  # Job 1: Executar os testes da API
   run-api-tests:
-    # Usa uma máquina virtual do Ubuntu para rodar os testes
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Baixa o seu código do repositório para a máquina virtual
       - name: Baixar o código do repositório
         uses: actions/checkout@v4
 
-      # 2. Configura o ambiente Node.js, necessário para rodar o Newman
       - name: Configurar o ambiente Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # 3. Instala o Newman e o gerador de relatórios HTML
       - name: Instalar o Newman e o gerador de relatórios
         run: npm install -g newman newman-reporter-htmlextra
 
-      # 4. Executa os testes da coleção do Postman
       - name: Executar os testes da API com Newman
         run: |
-          # O comando usa os nomes dos seus arquivos e injeta o segredo
           newman run "Qa-Coders Academy.postman_collection.json" \
             -e "Supernatural.postman_environment.json" \
             --env-var "AUTH_TOKEN=${{ secrets.GH_PERSONAL_TOKEN }}" \
             --reporters cli,htmlextra \
             --reporter-htmlextra-export "newman-results/report.html"
 
-      # 5. Salva os relatórios dos testes como um artefato para download
       - name: Salvar os relatórios dos testes como artefato
-        # A condição 'if: always()' garante que os relatórios sejam salvos mesmo se algum teste falhar
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: relatorios-dos-testes-api
-          path: newman-results
+          path: newman-results/
+
+  # --------------------------------------------------------------------
+
+  # Job 2: Fazer o Deploy para o GitHub Pages
+  deploy-to-pages:
+    # Só executa se o job de testes passar com sucesso
+    needs: run-api-tests
+    runs-on: ubuntu-latest
+
+    # Permissões necessárias para o deploy no GitHub Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Baixar o código do repositório
+        uses: actions/checkout@v4
+      
+      # Descarrega os resultados do job anterior
+      - name: Descarregar os relatórios dos testes
+        uses: actions/download-artifact@v4
+        with:
+          name: relatorios-dos-testes-api
+
+      - name: Configurar o GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Carregar o artefato para deploy
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Publica tudo o que está na raiz (index.html + report.html descarregado)
+          path: '.' 
+          
+      - name: Fazer o Deploy no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
