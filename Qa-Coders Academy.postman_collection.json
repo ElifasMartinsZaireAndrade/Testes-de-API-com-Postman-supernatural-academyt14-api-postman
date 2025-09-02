@@ -1302,8 +1302,8 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Verificar mensagem de alerta após deleção\", () => {\r",
@@ -9033,7 +9033,7 @@
 							"script": {
 								"exec": [
 									"pm.test(\"Status code is 400 \", function() {\r",
-									"    pm.response.to.have.status(201);\r",
+									"    pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
 									"\r",
@@ -9092,7 +9092,7 @@
 							"script": {
 								"exec": [
 									"pm.test(\"Status code is 400\", function() {\r",
-									"    pm.response.to.have.status(201);\r",
+									"    pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
 									"\r",
