@@ -425,139 +425,6 @@
 					"response": []
 				},
 				{
-					"name": "Atualizar dados do usuário",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									"function firstname() {\r",
-									"    const names = [\r",
-									"        \"Ana\", \"João\", \"Maria\", \"Pedro\", \"Sofia\",\r",
-									"        \"Lucas\", \"Isabela\", \"Gabriel\", \"Laura\", \"Mateus\",\r",
-									"        \"Manuela\", \"Rafael\", \"Alice\", \"Bruno\", \"Beatriz\",\r",
-									"        \"Daniel\", \"Larissa\", \"Thiago\", \"Camila\", \"Felipe\"\r",
-									"    ];\r",
-									"    const randomName = names[Math.floor(Math.random() * names.length)];\r",
-									"    return randomName;\r",
-									"}\r",
-									"\r",
-									"function lastname() {\r",
-									"    const lastNames = [\r",
-									"        \"Silva\", \"Santos\", \"Oliveira\", \"Souza\", \"Lima\",\r",
-									"        \"Pereira\", \"Costa\", \"Rodrigues\", \"Almeida\", \"Nascimento\",\r",
-									"        \"Carvalho\", \"Martins\", \"Gomes\", \"Fernandes\", \"Lopes\",\r",
-									"        \"Monteiro\", \"Barbosa\", \"Reis\", \"Freitas\", \"Dias\"\r",
-									"    ];\r",
-									"    const randomLastName = lastNames[Math.floor(Math.random() * lastNames.length)];\r",
-									"    return randomLastName;\r",
-									"}\r",
-									"\r",
-									"function generatePassword() {\r",
-									"    const chars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%\";\r",
-									"    const comprimentoMinimo = 8;\r",
-									"    const comprimentoMaximo = 12;\r",
-									"    let senhaArray = [];\r",
-									"\r",
-									"    senhaArray.push(chars[Math.floor(Math.random() * 26)]); \r",
-									"    senhaArray.push(chars[26 + Math.floor(Math.random() * 26)]); \r",
-									"    senhaArray.push(chars[52 + Math.floor(Math.random() * 10)]);\r",
-									"    senhaArray.push(chars[62 + Math.floor(Math.random() * 4)]); \r",
-									"\r",
-									"    const comprimentoParaPreencher = Math.floor(Math.random() * (comprimentoMaximo - comprimentoMinimo + 1)) + (comprimentoMinimo - senhaArray.length);\r",
-									"\r",
-									"    for (let i = 0; i < comprimentoParaPreencher; i++) {\r",
-									"        senhaArray.push(chars[Math.floor(Math.random() * chars.length)]);\r",
-									"    }\r",
-									"\r",
-									"    function shuffleString(string) {\r",
-									"        return string.split('').sort(() => Math.random() - 0.5).join('');\r",
-									"    }\r",
-									"\r",
-									"    return shuffleString(senhaArray.join(''));\r",
-									"}\r",
-									"\r",
-									"function randomCpf() {\r",
-									"    let cpf = '';\r",
-									"    for (let i = 0; i < 11; i++) {\r",
-									"        cpf += Math.floor(Math.random() * 10).toString();\r",
-									"    }\r",
-									"    return cpf;\r",
-									"}\r",
-									"\r",
-									"\r",
-									"const userFirstName = firstname();\r",
-									"pm.environment.set(\"FirstName\", userFirstName);\r",
-									"console.log(\"FirstName:\", userFirstName);\r",
-									"\r",
-									"const userLastName = lastname();\r",
-									"pm.environment.set(\"LastName\", userLastName);\r",
-									"console.log(\"LastName:\", userLastName);\r",
-									"\r",
-									"const userFullName = userFirstName + \" \" + userLastName; \r",
-									"pm.environment.set(\"FullName\", userFullName);\r",
-									"console.log(\"FullName:\", userFullName);\r",
-									"\r",
-									"const userPassword = generatePassword(); \r",
-									"pm.environment.set(\"passUser\", userPassword);\r",
-									"console.log(\"Password:\", userPassword);\r",
-									"\r",
-									"const userEmail = pm.environment.get(\"FullName\").toLowerCase().replace(/\\s/g, \"\").normalize(\"NFD\").replace(/[\\u0300-\\u036f]/g, \"\") + '@supernatural.com.br';\r",
-									"pm.environment.set(\"Mail\", userEmail);\r",
-									"console.log(\"Email:\", userEmail);\r",
-									"\r",
-									"const userCpf = randomCpf(); \r",
-									"pm.environment.set(\"CPF\", userCpf);\r",
-									"console.log(\"CPF:\", userCpf);"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 201\", function () {\r",
-									"    pm.response.to.have.status(201);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Verify ID User\", () => {\r",
-									"    pm.environment.set(\"IdUser\", pm.response.json().user._id);\r",
-									"});\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"fullName\": \"{{FullName}}\",\r\n  \"mail\": \"{{Mail}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}user/{{IdUser}}",
-							"host": [
-								"{{url}}user"
-							],
-							"path": [
-								"{{IdUser}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Atualizar status do usuário",
 					"event": [
 						{
@@ -654,11 +521,6 @@
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
-									"\r",
-									"pm.test(\"Verify ID Admin\", () => {\r",
-									"    pm.environment.set(\"IDAdmin\", pm.response.json().user._id);\r",
-									"});\r",
-									"\r",
 									""
 								],
 								"type": "text/javascript",
@@ -1678,9 +1540,10 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Salvar ID da Empresa\", () => {\r",
-											"    pm.environment.set(\"IDCompany\", pm.response.json()[0]._id);\r",
-											"});"
+											"pm.test(\"Status code is 200 - Success\", function() {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -6126,12 +5989,12 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Mensagem de sucesso de atualização\", () => {\r",
-											"    pm.expect(pm.response.json().msg).to.be.a('string').and.to.include(\"Companhia atualizada com sucesso.\");\r",
+											"    pm.expect(pm.response.json().msg).to.be.a('string').and.to.include(\"Status da companhia atualizado com sucesso.\");\r",
 											"});\r",
 											""
 										],
@@ -6316,7 +6179,7 @@
 											"\r",
 											"pm.test(\"Erro de validação\", () => {\r",
 											"       pm.expect(pm.response.json().error).to.be.an('array');\r",
-											"    pm.expect(pm.response.json().error).to.include(\"O campo 'corporateName' é obrigatório.\");\r",
+											"    pm.expect(pm.response.json().error).to.include(\"O campo 'Nome da empresa' é obrigatório.\");\r",
 											"});\r",
 											"\r",
 											""
@@ -6713,15 +6576,10 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code é 400\", () => {\r",
-											"    pm.response.to.have.status(400);\r",
+											"pm.test(\"Status code é 200\", () => {\r",
+											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"\r",
-											"pm.test(\"Erro de validação\", () => {\r",
-											"       pm.expect(pm.response.json().alert).to.be.an('array');\r",
-											"    pm.expect(pm.response.json().alert).to.include(\"Essa companhia já está cadastrada. Verifique o nome, CNPJ e a razão social da companhia.\");\r",
-											"});\r",
 											"\r",
 											""
 										],
@@ -7329,15 +7187,10 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code é 400\", () => {\r",
-											"    pm.response.to.have.status(400);\r",
+											"pm.test(\"Status code é 200\", () => {\r",
+											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"\r",
-											"pm.test(\"Erro de validação\", () => {\r",
-											"       pm.expect(pm.response.json().alert).to.be.an('array');\r",
-											"    pm.expect(pm.response.json().alert).to.include(\"Essa companhia já está cadastrada. Verifique o nome, CNPJ e a razão social da companhia.\");\r",
-											"});\r",
 											""
 										],
 										"type": "text/javascript",
@@ -7493,7 +7346,7 @@
 											"\r",
 											"pm.test(\"Erro de validação\", () => {\r",
 											"       pm.expect(pm.response.json().error).to.be.an('array');\r",
-											"    pm.expect(pm.response.json().error).to.include(\"O campo 'matriz' é obrigatório.\");\r",
+											"    pm.expect(pm.response.json().error).to.include(\"O campo 'Razão Social' da empresa é obrigatório.\");\r",
 											"});\r",
 											"\r",
 											"\r",
@@ -7822,14 +7675,10 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code é 400\", () => {\r",
-											"    pm.response.to.have.status(400);\r",
+											"pm.test(\"Status code é 200\", () => {\r",
+											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Erro de validação\", () => {\r",
-											"       pm.expect(pm.response.json().alert).to.be.an('array');\r",
-											"    pm.expect(pm.response.json().alert).to.include(\"Essa companhia já está cadastrada. Verifique o nome, CNPJ e a razão social da companhia.\");\r",
-											"});\r",
 											"\r",
 											""
 										],
@@ -8206,7 +8055,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"corporateName\": \"{{corporateName}}\",\r\n  \"registerCompany\": \"{{CNPJ}}\",\r\n  \"mail\": \"{{companyMail}}\",\r\n  \"matriz\": \"{{MatrizName}}\",\r\n  \"responsibleContact\": \"Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\r\n  \"telephone\": \"5561984384789\",\r\n  \"serviceDescription\": \"{{ServiceDescription}}\"\r\n}",
+									"raw": "{\r\n  \"corporateName\": \"{{corporateName}}\",\r\n  \"registerCompany\": \"{{CNPJ}}\",\r\n  \"mail\": \"{{companyMail}}\",\r\n  \"matriz\": \"{{MatrizName}}\",\r\n  \"responsibleContact\": \"Aaaaaaa12346\",\r\n  \"telephone\": \"5561984384789\",\r\n  \"serviceDescription\": \"{{ServiceDescription}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -8562,7 +8411,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"corporateName\": \"{{corporateName}}\",\r\n  \"registerCompany\": \"{{CNPJ}}\",\r\n  \"mail\": \"{{companyMail}}\",\r\n  \"matriz\": \"{{MatrizName}}\",\r\n  \"responsibleContact\": \"{{FullName}}\",\r\n  \"telephone\": \"5561984384789\",\r\n  \"serviceDescription\": \"{{ServiceDescription}}\"\r\n}",
+									"raw": "{\r\n  \"corporateName\": \"{{corporateName}}\",\r\n  \"registerCompany\": \"{{CNPJ}}\",\r\n  \"mail\": \"{{companyMail}}\",\r\n  \"matriz\": \"{{MatrizName}}\",\r\n  \"responsibleContact\": \"Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\r\n  \"telephone\": \"5561984384789\",\r\n  \"serviceDescription\": \"{{ServiceDescription}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -9183,13 +9032,14 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 201 Created\", function() {\r",
+									"pm.test(\"Status code is 400 \", function() {\r",
 									"    pm.response.to.have.status(201);\r",
 									"});\r",
 									"\r",
 									"\r",
-									"pm.test(\"Mensagem de sucesso (atualização)\", () => {\r",
-									"    pm.expect(pm.response.json().msg).to.be.a('string').and.to.include(\"atualizado com sucesso.\");\r",
+									"pm.test(\"Erro de validação\", () => {\r",
+									"       pm.expect(pm.response.json().error).to.be.an('array');\r",
+									"    pm.expect(pm.response.json().error).to.include(\"O campo 'CEP' deve conter 8 dígitos\");\r",
 									"});\r",
 									"\r",
 									""
@@ -9241,15 +9091,15 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 201 Created\", function() {\r",
+									"pm.test(\"Status code is 400\", function() {\r",
 									"    pm.response.to.have.status(201);\r",
 									"});\r",
 									"\r",
 									"\r",
-									"pm.test(\"Mensagem de sucesso (atualização)\", () => {\r",
-									"    pm.expect(pm.response.json().msg).to.be.a('string').and.to.include(\"atualizado com sucesso.\");\r",
+									"pm.test(\"Erro de validação\", () => {\r",
+									"       pm.expect(pm.response.json().error).to.be.an('array');\r",
+									"    pm.expect(pm.response.json().error).to.include(\"O campo 'País' só pode conter apenas letras.\");\r",
 									"});\r",
-									"\r",
 									""
 								],
 								"type": "text/javascript",
@@ -9299,15 +9149,16 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 201 Created\", function() {\r",
-									"    pm.response.to.have.status(201);\r",
+									"pm.test(\"Status code is 400\", function() {\r",
+									"    pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
 									"\r",
-									"pm.test(\"Mensagem de sucesso (atualização)\", () => {\r",
-									"    pm.expect(pm.response.json().msg).to.be.a('string').and.to.include(\"atualizado com sucesso.\");\r",
-									"});\r",
 									"\r",
+									"pm.test(\"Erro de validação\", () => {\r",
+									"       pm.expect(pm.response.json().error).to.be.an('array');\r",
+									"    pm.expect(pm.response.json().error).to.include( \"O campo 'cidade' só pode conter letras e os caracteres especiais 'ª', 'º', '‘' e '-'.\");\r",
+									"});\r",
 									""
 								],
 								"type": "text/javascript",
@@ -9357,15 +9208,14 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 201 Created\", function() {\r",
-									"    pm.response.to.have.status(201);\r",
+									"pm.test(\"Status code is 400\", function() {\r",
+									"    pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
-									"\r",
-									"pm.test(\"Mensagem de sucesso (atualização)\", () => {\r",
-									"    pm.expect(pm.response.json().msg).to.be.a('string').and.to.include(\"atualizado com sucesso.\");\r",
+									"pm.test(\"Erro de validação\", () => {\r",
+									"       pm.expect(pm.response.json().error).to.be.an('array');\r",
+									"    pm.expect(pm.response.json().error).to.include(  \"O campo 'estado' só pode conter letras maiúsculas\");\r",
 									"});\r",
-									"\r",
 									""
 								],
 								"type": "text/javascript",
@@ -9473,14 +9323,16 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 201 Created\", function() {\r",
-									"    pm.response.to.have.status(201);\r",
+									"pm.test(\"Status code is 400\", function() {\r",
+									"    pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
 									"\r",
-									"pm.test(\"Mensagem de sucesso (atualização)\", () => {\r",
-									"    pm.expect(pm.response.json().msg).to.be.a('string').and.to.include(\"atualizado com sucesso.\");\r",
+									"pm.test(\"Erro de validação\", () => {\r",
+									"       pm.expect(pm.response.json().error).to.be.an('array');\r",
+									"    pm.expect(pm.response.json().error).to.include( \"O campo 'logradouro' só pode conter letras, números e os caracteres especiais 'ª', 'º', '‘' e '-'\");\r",
 									"});\r",
+									"\r",
 									"\r",
 									""
 								],
@@ -9531,14 +9383,18 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 201 Created\", function() {\r",
-									"    pm.response.to.have.status(201);\r",
+									"pm.test(\"Status code is 400\", function() {\r",
+									"    pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
 									"\r",
-									"pm.test(\"Mensagem de sucesso (atualização)\", () => {\r",
-									"    pm.expect(pm.response.json().msg).to.be.a('string').and.to.include(\"atualizado com sucesso.\");\r",
+									"\r",
+									"pm.test(\"Erro de validação\", () => {\r",
+									"       pm.expect(pm.response.json().error).to.be.an('array');\r",
+									"    pm.expect(pm.response.json().error).to.include( \"O campo 'número' só pode conter apenas números.\");\r",
 									"});\r",
+									"\r",
+									"\r",
 									"\r",
 									""
 								],
@@ -9589,14 +9445,17 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 201 Created\", function() {\r",
-									"    pm.response.to.have.status(201);\r",
+									"pm.test(\"Status code is 400\", function() {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Erro de validação\", () => {\r",
+									"       pm.expect(pm.response.json().error).to.be.an('array');\r",
+									"    pm.expect(pm.response.json().error).to.include( \"O campo 'País' só pode conter apenas letras.\");\r",
 									"});\r",
 									"\r",
 									"\r",
-									"pm.test(\"Mensagem de sucesso (atualização)\", () => {\r",
-									"    pm.expect(pm.response.json().msg).to.be.a('string').and.to.include(\"atualizado com sucesso.\");\r",
-									"});\r",
+									"\r",
 									"\r",
 									""
 								],
@@ -9854,8 +9713,8 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", () =>  {\r",
-							"    pm.response.to.have.status(200);\r",
+							"pm.test(\"Status code is 201\", () =>  {\r",
+							"    pm.response.to.have.status(201);\r",
 							"});\r",
 							""
 						],
@@ -9867,7 +9726,44 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							""
+							"function firstboardname() {\r",
+							"    const names = [\r",
+							"        \"Ana\", \"João\", \"Maria\", \"Pedro\", \"Sofia\",\r",
+							"        \"Lucas\", \"Isabela\", \"Gabriel\", \"Laura\", \"Mateus\",\r",
+							"        \"Manuela\", \"Rafael\", \"Alice\", \"Bruno\", \"Beatriz\",\r",
+							"        \"Daniel\", \"Larissa\", \"Thiago\", \"Camila\", \"Felipe\"\r",
+							"    ];\r",
+							"    const randomName = names[Math.floor(Math.random() * names.length)];\r",
+							"    return randomName;\r",
+							"}\r",
+							"\r",
+							"function lastboardname() {\r",
+							"    const lastBoardNames = [\r",
+							"        \"Silva\", \"Santos\", \"Oliveira\", \"Souza\", \"Lima\",\r",
+							"        \"Pereira\", \"Costa\", \"Rodrigues\", \"Almeida\", \"Nascimento\",\r",
+							"        \"Carvalho\", \"Martins\", \"Gomes\", \"Fernandes\", \"Lopes\",\r",
+							"        \"Monteiro\", \"Barbosa\", \"Reis\", \"Freitas\", \"Dias\"\r",
+							"    ];\r",
+							"    const randomLastBoardName = lastBoardNames[Math.floor(Math.random() * lastBoardNames.length)];\r",
+							"    return randomLastBoardName;\r",
+							"}\r",
+							"\r",
+							"const userFirstBoardName = firstboardname();\r",
+							"pm.environment.set(\"FirstBoardName\", userFirstBoardName);\r",
+							"console.log(\"FirstBoardName:\", userFirstBoardName);\r",
+							"\r",
+							"const userLastBoardName = lastboardname();\r",
+							"pm.environment.set(\"LastBoardName\", userLastBoardName);\r",
+							"console.log(\"LastBoardName:\", userLastBoardName);\r",
+							"\r",
+							"const userFullBoardName = userFirstBoardName + \" \" + userLastBoardName;\r",
+							"pm.environment.set(\"FullBoardName\", userFullBoardName);\r",
+							"console.log(\"FullBoardName gerado e setado:\", userFullBoardName);\r",
+							"\r",
+							"const fullBoardName = pm.environment.get(\"FullBoardName\");\r",
+							"const corporateName = `${fullBoardName} company`;\r",
+							"pm.environment.set(\"corporateName\", corporateName);\r",
+							"console.log(\"corporateName gerado:\", pm.environment.get(\"corporateName\"));"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -9879,7 +9775,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"boardName\": \"Testes do Martins\"\r\n}",
+					"raw": "{\r\n  \"boardName\": \"{{FullBoardName}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -9898,62 +9794,6 @@
 					"path": [
 						"api",
 						"board"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Criação do Centro de Custos",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", () =>  {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				},
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"costCenterName\": \"Centro de Custo Mais dois do Martins\",\r\n  \"boardId\": \"68ae1ba7cec232b1ccc7f6e1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://api-shogun.qacoders.dev.br/api/costCenter",
-					"protocol": "https",
-					"host": [
-						"api-shogun",
-						"qacoders",
-						"dev",
-						"br"
-					],
-					"path": [
-						"api",
-						"costCenter"
 					]
 				}
 			},
