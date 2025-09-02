@@ -1,21 +1,536 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Deploy dos Testes de API (Postman)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA.Coders T14 - Dashboard de Testes de API</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #2d333b; color: #adbac7; margin: 0; }
-        .container { text-align: center; border: 1px solid #444c56; padding: 40px; border-radius: 10px; background-color: #22272e; }
-        h1 { color: #5cd9e5; }
-        a { color: #58a6ff; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .success-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #00b894, #00cec9);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(0, 184, 148, 0.3);
+        }
+
+        .success-badge i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .api-icon {
+            background: linear-gradient(45deg, #e17055, #fdcb6e);
+        }
+
+        .github-icon {
+            background: linear-gradient(45deg, #2d3436, #636e72);
+        }
+
+        .report-icon {
+            background: linear-gradient(45deg, #00b894, #00cec9);
+        }
+
+        .course-icon {
+            background: linear-gradient(45deg, #a29bfe, #6c5ce7);
+        }
+
+        .card h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .features {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .features h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .automated-icon {
+            background: linear-gradient(45deg, #fd79a8, #fdcb6e);
+        }
+
+        .postman-icon {
+            background: linear-gradient(45deg, #ff7675, #fd79a8);
+        }
+
+        .ci-icon {
+            background: linear-gradient(45deg, #74b9ff, #0984e3);
+        }
+
+        .quality-icon {
+            background: linear-gradient(45deg, #00b894, #55a3ff);
+        }
+
+        .feature h4 {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #7f8c8d;
+            line-height: 1.5;
+        }
+
+        .footer {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00b894;
+            display: block;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🚀 Deploy dos Testes de API Realizado com Sucesso!</h1>
-        <p>Este site foi publicado automaticamente pelo GitHub Actions.</p>
-        <p><a href="./report.html">Ver Relatório de Testes (Newman)</a></p>
+        <header class="header">
+            <h1><i class="fas fa-vial"></i> QA.Coders T14</h1>
+            <p class="subtitle">Testes de API com Postman - Supernatural Academy</p>
+            <div class="success-badge pulse">
+                <i class="fas fa-check-circle"></i>
+                Deploy dos Testes Realizado com Sucesso!
+            </div>
+            
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Automação</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">CI/CD</span>
+                    <span class="stat-label">GitHub Actions</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">API</span>
+                    <span class="stat-label">Postman Tests</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="cards-grid">
+            <div class="card floating">
+                <div class="card-header">
+                    <div class="card-icon report-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h3>Relatório de Testes</h3>
+                    </div>
+                </div>
+                <p>Visualize os resultados detalhados dos testes de API executados automaticamente via GitHub Actions.</p>
+                <a href="report.html" class="btn">
+                    <i class="fas fa-file-alt"></i>
+                    Ver Relatório
+                </a>
+            </div>
+
+            <div class="card floating" style="animation-delay: 0.2s;">
+                <div class="card-header">
+                    <div class="card-icon github-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div>
+                        <h3>Repositório GitHub</h3>
+                    </div>
+                </div>
+                <p>Acesse o código-fonte completo do projeto, incluindo os testes Postman e configurações do GitHub Actions.</p>
+                <a href="https://github.com/elifasmartinszaireandrade/Testes-de-API-com-Postman-supernatural-academyt14-api-postman" class="btn">
+                    <i class="fas fa-code"></i>
+                    Ver Código
+                </a>
+            </div>
+
+            <div class="card floating" style="animation-delay: 0.4s;">
+                <div class="card-header">
+                    <div class="card-icon api-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div>
+                        <h3>API Supernatural Academy</h3>
+                    </div>
+                </div>
+                <p>Testes automatizados da API Supernatural Academy com validações completas de endpoints e cenários.</p>
+                <a href="#" class="btn" onclick="showApiDetails()">
+                    <i class="fas fa-info-circle"></i>
+                    Detalhes da API
+                </a>
+            </div>
+
+            <div class="card floating" style="animation-delay: 0.6s;">
+                <div class="card-header">
+                    <div class="card-icon course-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h3>Curso QA.Coders</h3>
+                    </div>
+                </div>
+                <p>Projeto desenvolvido durante o curso QA.Coders Turma 14, focado em automação de testes de API.</p>
+                <a href="#" class="btn" onclick="showCourseInfo()">
+                    <i class="fas fa-book"></i>
+                    Sobre o Curso
+                </a>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2><i class="fas fa-star"></i> Características do Projeto</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon automated-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4>Testes Automatizados</h4>
+                    <p>Execução automática de testes via GitHub Actions com relatórios detalhados</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon postman-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h4>Postman Collection</h4>
+                    <p>Coleção completa de testes organizados para a API Supernatural Academy</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon ci-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h4>CI/CD Pipeline</h4>
+                    <p>Integração contínua configurada para execução automática dos testes</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon quality-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Garantia de Qualidade</h4>
+                    <p>Validações rigorosas para garantir a qualidade e confiabilidade da API</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p><i class="fas fa-code"></i> Desenvolvido com ❤️ por Elifa Martins - QA.Coders T14</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
+                <i class="fas fa-calendar-alt"></i> Última atualização: <span id="lastUpdate"></span>
+            </p>
+        </footer>
     </div>
+
+    <!-- Modal para detalhes da API -->
+    <div id="apiModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 40px; border-radius: 20px; max-width: 600px; margin: 20px;">
+            <h3 style="color: #2c3e50; margin-bottom: 20px;"><i class="fas fa-server"></i> API Supernatural Academy</h3>
+            <p style="color: #7f8c8d; line-height: 1.6; margin-bottom: 20px;">
+                Esta API fornece endpoints para gerenciamento de personagens, episódios e temporadas da série Supernatural. 
+                Os testes incluem validações de CRUD, autenticação e integridade dos dados.
+            </p>
+            <ul style="color: #7f8c8d; margin-bottom: 20px; padding-left: 20px;">
+                <li>Testes de endpoints GET, POST, PUT, DELETE</li>
+                <li>Validação de schemas JSON</li>
+                <li>Testes de performance e tempo de resposta</li>
+                <li>Verificação de códigos de status HTTP</li>
+            </ul>
+            <button onclick="closeModal()" style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; padding: 10px 20px; border: none; border-radius: 25px; cursor: pointer;">
+                <i class="fas fa-times"></i> Fechar
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal para informações do curso -->
+    <div id="courseModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 40px; border-radius: 20px; max-width: 600px; margin: 20px;">
+            <h3 style="color: #2c3e50; margin-bottom: 20px;"><i class="fas fa-graduation-cap"></i> QA.Coders Turma 14</h3>
+            <p style="color: #7f8c8d; line-height: 1.6; margin-bottom: 20px;">
+                O QA.Coders é um curso intensivo focado em Quality Assurance, abordando as principais ferramentas 
+                e técnicas utilizadas no mercado de trabalho para garantir a qualidade de software.
+            </p>
+            <ul style="color: #7f8c8d; margin-bottom: 20px; padding-left: 20px;">
+                <li>Automação de testes com Postman</li>
+                <li>Integração contínua com GitHub Actions</li>
+                <li>Testes de API e validação de contratos</li>
+                <li>Boas práticas de QA e DevOps</li>
+            </ul>
+            <button onclick="closeCourseModal()" style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; padding: 10px 20px; border: none; border-radius: 25px; cursor: pointer;">
+                <i class="fas fa-times"></i> Fechar
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Atualizar data
+        document.getElementById('lastUpdate').textContent = new Date().toLocaleDateString('pt-BR');
+
+        // Funções dos modais
+        function showApiDetails() {
+            document.getElementById('apiModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('apiModal').style.display = 'none';
+        }
+
+        function showCourseInfo() {
+            document.getElementById('courseModal').style.display = 'flex';
+        }
+
+        function closeCourseModal() {
+            document.getElementById('courseModal').style.display = 'none';
+        }
+
+        // Fechar modal clicando fora
+        window.onclick = function(event) {
+            const apiModal = document.getElementById('apiModal');
+            const courseModal = document.getElementById('courseModal');
+            if (event.target === apiModal) {
+                apiModal.style.display = 'none';
+            }
+            if (event.target === courseModal) {
+                courseModal.style.display = 'none';
+            }
+        }
+
+        // Adicionar efeitos de entrada
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(50px)';
+                    card.style.transition = 'all 0.6s ease';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 200);
+            });
+        });
+    </script>
 </body>
 </html>
